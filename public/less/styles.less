@@ -1,3 +1,707 @@
-h1 {
-  color: green;
+/***************************
+****************************
+Variables
+****************************
+***************************/
+
+@font-color: #373e44;
+@font-color-hover: black;
+
+@gray-1: #292929;
+@gray-2: #3f3f3f;
+@gray-3: #818181;
+@gray-4: #7f7f7f;
+@gray-5: #525252;
+@gray-6: #b3b3b3;
+@gray-7: #e7e7e7;
+@gray-8: #ebebeb;
+@gray-9: #f8f8f8;
+@gray-10: #898989;
+@gray-11: #3d3d3d;
+@gray-12: #f1f1f1;
+@gray-13: #d7d7d7;
+@gray-14: #f7f7f7;
+@gray-15: #b7b7b7;
+
+@red-1: #ff4539;
+@red-2: #e03d32;
+@red-3: rgba(255, 69, 57, 0.6);
+
+@fb-color: #3a5795;
+@tw-color: #00aced;
+@yt-color: #cc181e;
+@pt-color: #ab171e;
+@ig-color: #7c5641;
+
+/***************************
+****************************
+Fonts
+****************************
+***************************/
+
+@font-face {
+  font-family: 'Avenir-Roman';
+  src: url('../fonts/Avenir-Roman_gdi.eot');
+  src: url('../fonts/Avenir-Roman_gdi.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Avenir-Roman_gdi.woff') format('woff'),
+  url('../fonts/Avenir-Roman_gdi.ttf') format('truetype'),
+  url('../fonts/Avenir-Roman_gdi.otf') format('opentype'),
+  url('../fonts/Avenir-Roman_gdi.svg#Avenir-Roman') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2212;
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-Heavy';
+  src: url('../fonts/AvenirLTStd-Heavy_gdi.eot');
+  src: url('../fonts/AvenirLTStd-Heavy_gdi.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/AvenirLTStd-Heavy_gdi.woff') format('woff'),
+  url('../fonts/AvenirLTStd-Heavy_gdi.ttf') format('truetype'),
+  url('../fonts/AvenirLTStd-Heavy_gdi.otf') format('opentype'),
+  url('../fonts/AvenirLTStd-Heavy_gdi.svg#AvenirLTStd-Heavy') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-25CA;
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-Black';
+  src: url('../fonts/AvenirLTStd-Black_gdi.eot');
+  src: url('../fonts/AvenirLTStd-Black_gdi.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/AvenirLTStd-Black_gdi.woff') format('woff'),
+  url('../fonts/AvenirLTStd-Black_gdi.ttf') format('truetype'),
+  url('../fonts/AvenirLTStd-Black_gdi.otf') format('opentype'),
+  url('../fonts/AvenirLTStd-Black_gdi.svg#AvenirLTStd-Black') format('svg');
+  font-weight: 750;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-25CA;
+}
+
+/***************************
+****************************
+Responsive
+****************************
+***************************/
+
+@large: ~"(min-width: 1200px)";
+@medium: ~"(min-width: 993px) and (max-width: 1200px)";
+@small: ~"(min-width: 768px) and (max-width: 992px)";
+@xs: ~"(max-width: 767px)";
+
+.show-xs,
+.show-s,
+.show-m,
+.show-xl {
+  display: none;
+  visibility: hidden;
+}
+
+@media @large {
+  .hide-xl {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .show-xl {
+    display: block;
+    visibility: visible;
+  }
+}
+
+@media @medium {
+  .hide-m {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .show-m {
+    display: block;
+    visibility: visible;
+  }
+}
+
+@media @small {
+  .hide-s {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .show-s {
+    display: block;
+    visibility: visible;
+  }
+}
+
+@media @xs {
+  .hide-xs {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .show-xs {
+    display: block;
+    visibility: visible;
+  }
+}
+
+/***************************
+****************************
+General Styles
+****************************
+***************************/
+
+.logo {
+  margin: 0;
+
+  a {
+    background: url("../images/logo.png") no-repeat 0 0;
+    text-indent: -9999px;
+    display: inline-block;
+    height: 101px;
+    width: 116px;
+  }
+
+  &.reversed {
+    a {
+      background: url("../images/logo-reversed.png") no-repeat 0 0;
+      height: 71px;
+    }
+  }
+}
+
+.list-unstyled {
+  margin: 0;
+}
+
+.border(@w, @c) {
+  border: @w solid @c;
+}
+
+.border-bottom(@w, @c) {
+  border-bottom: @w solid @c;
+}
+
+.border-top(@w, @c) {
+  border-top: @w solid @c;
+}
+
+.border-left(@w, @c) {
+  border-left: @w solid @c;
+}
+
+.border-right(@w, @c) {
+  border-right: @w solid @c;
+}
+
+.border-radius(@s) {
+  -webkit-border-radius: @s;
+  -moz-border-radius: @s;
+  border-radius: @s;
+}
+
+a,
+button {
+  background: none;
+  border: none;
+  color: @red-1;
+
+  &:hover {
+    color: @red-2;
+  }
+
+  &:hover,
+  &:visited,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'AvenirLTStd-Black';
+  margin-top: 0;
+}
+
+.font-settings-main {
+  line-height: 21px;
+  font-size: 15px;
+}
+
+.icon(@size, @bg-color) {
+  background-color: @bg-color;
+  color: white;
+  display: inline-block;
+  .border-radius(100%);
+  text-align: center;
+  height: @size;
+  width: @size;
+  line-height: @size;
+  font-size: 20px;
+}
+
+body {
+  background-color: white;
+  font-family: 'Avenir-Roman';
+  color: @font-color;
+  .font-settings-main;
+}
+
+/***************************
+****************************
+Buttons & Links
+****************************
+***************************/
+
+.xs-btn {
+  text-transform: uppercase;
+  color: white;
+  font-size: 14px;
+  font-family: 'AvenirLTStd-Heavy';
+  .border-radius(25px);
+  height: 39px;
+  display: inline-block;
+  line-height: 39px;
+  text-align: center;
+  padding: 0 25px;
+
+  &:hover {
+    color: white;
+  }
+
+  &.btn-main {
+    background-color: @red-1;
+
+    &:hover {
+      background-color: @red-2;
+    }
+  }
+}
+
+/***************************
+****************************
+Navigation Styles
+****************************
+***************************/
+
+.xs-navigation {
+  height: 101px;
+
+  .top {
+    height: 40px;
+    background-color: @gray-1;
+
+    .logo {
+      position: absolute;
+      top: 0;
+      left: 15px;
+    }
+
+    .xs-main-navigation {
+      float: right;
+    }
+  }
+
+  .bottom {
+    height: 61px;
+    background-color: white;
+    padding: 11px 0;
+
+    .xs-btn {
+      float: right;
+    }
+  }
+}
+
+.xs-main-navigation {
+  height: 40px;
+
+  li {
+    font-family: 'AvenirLTStd-Heavy';
+    line-height: 40px;
+    height: 40px;
+    padding: 0 17px;
+    .border-right(1px, @gray-2);
+    float: left;
+    text-transform: uppercase;
+    color: white;
+    font-size: 12px;
+
+    &:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    span {
+      .fa {
+        color: @gray-3;
+        font-size: 16px;
+      }
+    }
+
+    a {
+      line-height: 40px;
+      height: 40px;
+      display: block;
+      color: @red-1;
+
+      &:hover {
+        color: @red-2;
+      }
+    }
+  }
+}
+
+/***************************
+****************************
+Header Styles
+****************************
+***************************/
+
+#header {
+  height: 477px;
+  background: url("../images/bg-header.png") no-repeat 50% 0 / cover;
+}
+
+.main-header {
+  padding-top: 95px;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  h1 {
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+  }
+
+  .input-wrapper {
+    margin: 0 auto;
+    width: 567px;
+
+    .large-input {
+      padding-right: 66px;
+    }
+
+    > span {
+      right: 38px;
+      top: 17px;
+
+      .fa {
+        font-size: 30px;
+      }
+    }
+  }
+
+  h5 {
+    font-family: 'AvenirLTStd-Heavy';
+    font-size: 15px;
+    margin-top: 25px;
+  }
+}
+
+.bg-xxx {
+  background: url("../images/bg-xxx.png") no-repeat 50% 100%;
+}
+
+.input-wrapper {
+  position: relative;
+
+  > span {
+    color: @red-1;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.form-control {
+  .border-radius(25px);
+  boder-color: white;
+
+  &:focus {
+    border-color: @red-1;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px @red-3;
+    outline: 0 none;
+  }
+
+  &::-webkit-input-placeholder {
+    font-family: 'AvenirLTStd-Heavy';
+    color: @gray-4;
+    text-transform: uppercase;
+  }
+
+  &:-moz-placeholder {
+    font-family: 'AvenirLTStd-Heavy';
+    color: @gray-4;
+    text-transform: uppercase;
+  }
+
+  &::-moz-placeholder {
+    font-family: 'AvenirLTStd-Heavy';
+    color: @gray-4;
+    text-transform: uppercase;
+  }
+
+  &:-ms-input-placeholder {
+    font-family: 'AvenirLTStd-Heavy';
+    color: @gray-4;
+    text-transform: uppercase;
+  }
+
+  &.large-input {
+    .border-radius(50px);
+    height: 67px;
+    line-height: 67px;
+    padding: 0 38px;
+  }
+}
+
+/***************************
+****************************
+Breadcrumbs Styles
+****************************
+***************************/
+
+.breadcrumbs {
+  font-family: 'AvenirLTStd-Black';
+  text-transform: uppercase;
+  font-size: 11px;
+  color: @gray-5;
+  height: 56px;
+  line-height: 56px;
+  .border-bottom(1px, @gray-7);
+
+  span {
+    display: inline-block;
+    margin: 0 5px;
+    color: @gray-6;
+  }
+}
+
+/***************************
+****************************
+Main Styles
+****************************
+***************************/
+
+#main {
+  padding: 35px 0;
+}
+
+.topic-wrapper {
+  margin-bottom: 31px;
+
+  &:nth-last-of-type(-n+2) {
+    margin-bottom: 0;
+  }
+}
+
+.topic {
+  .border(1px, @gray-8);
+
+  > * {
+    padding: 16px 21px;
+  }
+
+  .topic-title {
+    text-transform: uppercase;
+    padding-left: 78px;
+    height: 77px;
+
+    &.icon-1 {
+      background: @gray-9 url("../images/bg-icon-1.png") no-repeat 21px 16px;
+    }
+
+    &.icon-2 {
+      background: @gray-9 url("../images/bg-icon-2.png") no-repeat 21px 16px;
+    }
+
+    &.icon-3 {
+      background: @gray-9 url("../images/bg-icon-3.png") no-repeat 21px 16px;
+    }
+
+    &.icon-4 {
+      background: @gray-9 url("../images/bg-icon-4.png") no-repeat 21px 16px;
+    }
+
+    h4 {
+      font-size: 15px;
+      line-height: normal;
+      margin-bottom: 0;
+    }
+
+    span {
+      color: @gray-10;
+      font-family: 'AvenirLTStd-Black';
+      display: block;
+      font-size: 13px;
+    }
+  }
+
+  .topic-content {
+    ul {
+      li {
+        margin-bottom: 18px;
+
+        a {
+          color: @font-color;
+
+          &:hover {
+            color: @font-color-hover;
+          }
+        }
+      }
+    }
+  }
+
+  .topic-footer {
+    font-family: 'AvenirLTStd-Black';
+    .border-top(1px, @gray-8);
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+}
+
+/***************************
+****************************
+Sidebar Styles
+****************************
+***************************/
+
+.widget {
+  h5 {
+    color: @gray-1;
+    background: url("../images/bg-widget-title.png") no-repeat 0 100%;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+  }
+
+  ul {
+    li {
+      margin-bottom: 30px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      a {
+        font-family: 'AvenirLTStd-Heavy';
+        text-transform: uppercase;
+        font-size: 13px;
+        color: @gray-1;
+
+        &:hover {
+          color: @gray-2;
+        }
+
+        span {
+          color: @red-1;
+          display: inline-block;
+          margin-right: 5px;
+
+          .fa {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/***************************
+****************************
+Footer Styles
+****************************
+***************************/
+
+.footer {
+  .border-top(1px, @gray-12);
+
+  .top {
+    padding: 26px 0;
+
+    .logo {
+      float: left;
+    }
+
+    .social {
+      float: right;
+      margin-top: 15px;
+    }
+  }
+
+  .bottom {
+    background-color: @gray-14;
+    padding: 20px 0;
+    color: @gray-15;
+    font-size: 11px;
+    font-family: 'Avenir-Roman';
+
+    .powered {
+      float: left;
+    }
+
+    ul {
+      float: right;
+
+      li {
+        float: left;
+        margin-left: 35px;
+
+        a {
+          color: @gray-15;
+
+          &:hover {
+            color: @gray-15;
+          }
+        }
+      }
+    }
+  }
+}
+
+.social {
+  .social-btn {
+    .icon(41px, @gray-13);
+
+    &.fb {
+      &:hover {
+        background-color: @fb-color;
+      }
+    }
+
+    &.tw {
+      &:hover {
+        background-color: @tw-color;
+      }
+    }
+
+    &.yt {
+      &:hover {
+        background-color: @yt-color;
+      }
+    }
+
+    &.pt {
+      &:hover {
+        background-color: @pt-color;
+      }
+    }
+
+    &.ig {
+      &:hover {
+        background-color: @ig-color;
+      }
+    }
+  }
 }
