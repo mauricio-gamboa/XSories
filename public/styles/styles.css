@@ -1,0 +1,564 @@
+/***************************
+****************************
+Variables
+****************************
+***************************/
+/***************************
+****************************
+Fonts
+****************************
+***************************/
+@font-face {
+  font-family: 'Avenir-Roman';
+  src: url('../fonts/Avenir-Roman_gdi.eot');
+  src: url('../fonts/Avenir-Roman_gdi.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir-Roman_gdi.woff') format('woff'), url('../fonts/Avenir-Roman_gdi.ttf') format('truetype'), url('../fonts/Avenir-Roman_gdi.otf') format('opentype'), url('../fonts/Avenir-Roman_gdi.svg#Avenir-Roman') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2212;
+}
+@font-face {
+  font-family: 'AvenirLTStd-Heavy';
+  src: url('../fonts/AvenirLTStd-Heavy_gdi.eot');
+  src: url('../fonts/AvenirLTStd-Heavy_gdi.eot?#iefix') format('embedded-opentype'), url('../fonts/AvenirLTStd-Heavy_gdi.woff') format('woff'), url('../fonts/AvenirLTStd-Heavy_gdi.ttf') format('truetype'), url('../fonts/AvenirLTStd-Heavy_gdi.otf') format('opentype'), url('../fonts/AvenirLTStd-Heavy_gdi.svg#AvenirLTStd-Heavy') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-25CA;
+}
+@font-face {
+  font-family: 'AvenirLTStd-Black';
+  src: url('../fonts/AvenirLTStd-Black_gdi.eot');
+  src: url('../fonts/AvenirLTStd-Black_gdi.eot?#iefix') format('embedded-opentype'), url('../fonts/AvenirLTStd-Black_gdi.woff') format('woff'), url('../fonts/AvenirLTStd-Black_gdi.ttf') format('truetype'), url('../fonts/AvenirLTStd-Black_gdi.otf') format('opentype'), url('../fonts/AvenirLTStd-Black_gdi.svg#AvenirLTStd-Black') format('svg');
+  font-weight: 750;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-25CA;
+}
+/***************************
+****************************
+Responsive
+****************************
+***************************/
+.show-xs,
+.show-s,
+.show-m,
+.show-xl {
+  display: none;
+  visibility: hidden;
+}
+@media (min-width: 1200px) {
+  .hide-xl {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  .show-xl {
+    display: block;
+    visibility: visible;
+  }
+}
+@media (min-width: 993px) and (max-width: 1200px) {
+  .hide-m {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  .show-m {
+    display: block;
+    visibility: visible;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .hide-s {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  .show-s {
+    display: block;
+    visibility: visible;
+  }
+}
+@media (max-width: 767px) {
+  .hide-xs {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  .show-xs {
+    display: block;
+    visibility: visible;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .mtm {
+    margin-top: 31px;
+  }
+}
+/***************************
+****************************
+General Styles
+****************************
+***************************/
+.logo {
+  margin: 0;
+}
+.logo a {
+  background: url("../images/logo.png") no-repeat 0 0;
+  text-indent: -9999px;
+  display: inline-block;
+  height: 101px;
+  width: 116px;
+}
+.logo.reversed a {
+  background: url("../images/logo-reversed.png") no-repeat 0 0;
+  height: 71px;
+}
+.list-unstyled {
+  margin: 0;
+}
+a,
+button {
+  background: none;
+  border: none;
+  color: #ff4539;
+}
+a:hover,
+button:hover {
+  color: #e03d32;
+}
+a:hover,
+button:hover,
+a:visited,
+button:visited,
+a:active,
+button:active,
+a:focus,
+button:focus {
+  text-decoration: none;
+  outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'AvenirLTStd-Black';
+  margin-top: 0;
+}
+.font-settings-main {
+  line-height: 21px;
+  font-size: 15px;
+}
+body {
+  background-color: white;
+  font-family: 'Avenir-Roman';
+  color: #373e44;
+  line-height: 21px;
+  font-size: 15px;
+}
+/***************************
+****************************
+Buttons & Links
+****************************
+***************************/
+.xs-btn {
+  text-transform: uppercase;
+  color: white;
+  font-size: 14px;
+  font-family: 'AvenirLTStd-Heavy';
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  height: 39px;
+  display: inline-block;
+  line-height: 39px;
+  text-align: center;
+  padding: 0 25px;
+}
+.xs-btn:hover {
+  color: white;
+}
+.xs-btn.btn-main {
+  background-color: #ff4539;
+}
+.xs-btn.btn-main:hover {
+  background-color: #e03d32;
+}
+/***************************
+****************************
+Navigation Styles
+****************************
+***************************/
+.xs-navigation {
+  height: 101px;
+}
+.xs-navigation .top {
+  height: 40px;
+  background-color: #292929;
+}
+.xs-navigation .top .logo {
+  position: absolute;
+  top: 0;
+  left: 15px;
+}
+.xs-navigation .top .xs-main-navigation {
+  float: right;
+}
+.xs-navigation .bottom {
+  height: 61px;
+  background-color: white;
+  padding: 11px 0;
+}
+.xs-navigation .bottom .xs-btn {
+  float: right;
+}
+.xs-main-navigation {
+  height: 40px;
+}
+.xs-main-navigation li {
+  font-family: 'AvenirLTStd-Heavy';
+  line-height: 40px;
+  height: 40px;
+  padding: 0 17px;
+  border-right: 1px solid #3f3f3f;
+  float: left;
+  text-transform: uppercase;
+  color: white;
+  font-size: 12px;
+}
+.xs-main-navigation li:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+.xs-main-navigation li span .fa {
+  color: #818181;
+  font-size: 16px;
+}
+.xs-main-navigation li a {
+  line-height: 40px;
+  height: 40px;
+  display: block;
+  color: #ff4539;
+}
+.xs-main-navigation li a:hover {
+  color: #e03d32;
+}
+/***************************
+****************************
+Header Styles
+****************************
+***************************/
+#header {
+  height: 477px;
+  background: url("../images/bg-header.png") no-repeat 50% 0 / cover;
+}
+.main-header {
+  padding-top: 95px;
+}
+.main-header h1,
+.main-header h2,
+.main-header h3,
+.main-header h4,
+.main-header h5,
+.main-header h6 {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+.main-header h1 {
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+  .main-header h1 {
+    font-size: 33px;
+  }
+}
+.main-header .input-wrapper {
+  margin: 0 auto;
+  width: 567px;
+}
+@media (max-width: 767px) {
+  .main-header .input-wrapper {
+    width: 100%;
+  }
+}
+.main-header .input-wrapper .large-input {
+  padding-right: 66px;
+}
+.main-header .input-wrapper > span {
+  right: 38px;
+  top: 17px;
+}
+.main-header .input-wrapper > span .fa {
+  font-size: 30px;
+}
+.main-header h5 {
+  font-family: 'AvenirLTStd-Heavy';
+  font-size: 15px;
+  margin-top: 25px;
+}
+.bg-xxx {
+  background: url("../images/bg-xxx.png") no-repeat 50% 100%;
+}
+.input-wrapper {
+  position: relative;
+}
+.input-wrapper > span {
+  color: #ff4539;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.form-control {
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  boder-color: white;
+}
+.form-control:focus {
+  border-color: #ff4539;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 69, 57, 0.6);
+  outline: 0 none;
+}
+.form-control::-webkit-input-placeholder {
+  font-family: 'AvenirLTStd-Heavy';
+  color: #7f7f7f;
+  text-transform: uppercase;
+}
+.form-control:-moz-placeholder {
+  font-family: 'AvenirLTStd-Heavy';
+  color: #7f7f7f;
+  text-transform: uppercase;
+}
+.form-control::-moz-placeholder {
+  font-family: 'AvenirLTStd-Heavy';
+  color: #7f7f7f;
+  text-transform: uppercase;
+}
+.form-control:-ms-input-placeholder {
+  font-family: 'AvenirLTStd-Heavy';
+  color: #7f7f7f;
+  text-transform: uppercase;
+}
+.form-control.large-input {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  height: 67px;
+  line-height: 67px;
+  padding: 0 38px;
+}
+/***************************
+****************************
+Breadcrumbs Styles
+****************************
+***************************/
+.breadcrumbs {
+  font-family: 'AvenirLTStd-Black';
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #525252;
+  height: 56px;
+  line-height: 56px;
+  border-bottom: 1px solid #e7e7e7;
+}
+.breadcrumbs span {
+  display: inline-block;
+  margin: 0 5px;
+  color: #b3b3b3;
+}
+/***************************
+****************************
+Main Styles
+****************************
+***************************/
+#main {
+  padding: 35px 0;
+}
+.topic-wrapper {
+  margin-bottom: 31px;
+}
+.topic-wrapper:nth-last-of-type(-n+2) {
+  margin-bottom: 0;
+}
+@media (max-width: 767px) {
+  .topic-wrapper:nth-last-of-type(-n+2) {
+    margin-bottom: 31px;
+  }
+}
+.topic {
+  border: 1px solid #ebebeb;
+}
+.topic > * {
+  padding: 16px 21px;
+}
+.topic .topic-title {
+  text-transform: uppercase;
+  padding-left: 78px;
+  height: 77px;
+}
+.topic .topic-title.icon-1 {
+  background: #f8f8f8 url("../images/bg-icon-1.png") no-repeat 21px 16px;
+}
+.topic .topic-title.icon-2 {
+  background: #f8f8f8 url("../images/bg-icon-2.png") no-repeat 21px 16px;
+}
+.topic .topic-title.icon-3 {
+  background: #f8f8f8 url("../images/bg-icon-3.png") no-repeat 21px 16px;
+}
+.topic .topic-title.icon-4 {
+  background: #f8f8f8 url("../images/bg-icon-4.png") no-repeat 21px 16px;
+}
+.topic .topic-title h4 {
+  font-size: 15px;
+  line-height: normal;
+  margin-bottom: 0;
+}
+.topic .topic-title span {
+  color: #898989;
+  font-family: 'AvenirLTStd-Black';
+  display: block;
+  font-size: 13px;
+}
+.topic .topic-content ul li {
+  margin-bottom: 18px;
+}
+.topic .topic-content ul li a {
+  color: #373e44;
+}
+.topic .topic-content ul li a:hover {
+  color: black;
+}
+.topic .topic-footer {
+  font-family: 'AvenirLTStd-Black';
+  border-top: 1px solid #ebebeb;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+/***************************
+****************************
+Sidebar Styles
+****************************
+***************************/
+.widget h5 {
+  color: #292929;
+  background: url("../images/bg-widget-title.png") no-repeat 0 100%;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+.widget ul li {
+  margin-bottom: 30px;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .widget ul li {
+    float: left;
+    width: 33.33333333%;
+    margin: 0;
+  }
+}
+.widget ul li:last-of-type {
+  margin-bottom: 0;
+}
+.widget ul li a {
+  font-family: 'AvenirLTStd-Heavy';
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #292929;
+}
+.widget ul li a:hover {
+  color: #3f3f3f;
+}
+.widget ul li a span {
+  color: #ff4539;
+  display: inline-block;
+  margin-right: 5px;
+}
+.widget ul li a span .fa {
+  font-size: 16px;
+}
+/***************************
+****************************
+Footer Styles
+****************************
+***************************/
+.footer {
+  border-top: 1px solid #f1f1f1;
+}
+.footer .top {
+  padding: 26px 0;
+}
+.footer .top .logo {
+  float: left;
+}
+@media (max-width: 767px) {
+  .footer .top .logo {
+    float: none;
+    text-align: center;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 15px;
+  }
+}
+.footer .top .social {
+  float: right;
+  margin-top: 15px;
+}
+@media (max-width: 767px) {
+  .footer .top .social {
+    float: none;
+    text-align: center;
+  }
+}
+.footer .bottom {
+  background-color: #f7f7f7;
+  padding: 20px 0;
+  color: #b7b7b7;
+  font-size: 11px;
+  font-family: 'Avenir-Roman';
+}
+.footer .bottom .powered {
+  float: left;
+}
+.footer .bottom ul {
+  float: right;
+}
+.footer .bottom ul li {
+  float: left;
+  margin-left: 35px;
+}
+.footer .bottom ul li a {
+  color: #b7b7b7;
+}
+.footer .bottom ul li a:hover {
+  color: #b7b7b7;
+}
+.social .social-btn {
+  background-color: #d7d7d7;
+  color: white;
+  display: inline-block;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  text-align: center;
+  height: 41px;
+  width: 41px;
+  line-height: 41px;
+  font-size: 20px;
+}
+.social .social-btn.fb:hover {
+  background-color: #3a5795;
+}
+.social .social-btn.tw:hover {
+  background-color: #00aced;
+}
+.social .social-btn.yt:hover {
+  background-color: #cc181e;
+}
+.social .social-btn.pt:hover {
+  background-color: #ab171e;
+}
+.social .social-btn.ig:hover {
+  background-color: #7c5641;
+}
