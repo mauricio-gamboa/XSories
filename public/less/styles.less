@@ -387,11 +387,19 @@ Header Styles
   h1 {
     padding-bottom: 30px;
     margin-bottom: 40px;
+
+    @media @xs {
+      font-size: 33px;
+    }
   }
 
   .input-wrapper {
     margin: 0 auto;
     width: 567px;
+
+    @media @xs {
+      width: 100%;
+    }
 
     .large-input {
       padding-right: 66px;
@@ -508,6 +516,10 @@ Main Styles
 
   &:nth-last-of-type(-n+2) {
     margin-bottom: 0;
+
+    @media @xs {
+      margin-bottom: 31px;
+    }
   }
 }
 
@@ -646,11 +658,23 @@ Footer Styles
 
     .logo {
       float: left;
+
+      @media @xs {
+        float: none;
+        text-align: center;
+        .border-bottom(1px, @gray-12);
+        padding-bottom: 15px;
+      }
     }
 
     .social {
       float: right;
       margin-top: 15px;
+
+      @media @xs {
+        float: none;
+        text-align: center;
+      }
     }
   }
 
