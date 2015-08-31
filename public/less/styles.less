@@ -33,6 +33,8 @@ Variables
 @pt-color: #ab171e;
 @ig-color: #7c5641;
 
+@one-third: percentage(1/3);
+
 /***************************
 ****************************
 Fonts
@@ -145,6 +147,12 @@ Responsive
   .show-xs {
     display: block;
     visibility: visible;
+  }
+}
+
+.mtm {
+  @media @small {
+    margin-top: 31px;
   }
 }
 
@@ -589,6 +597,12 @@ Sidebar Styles
   ul {
     li {
       margin-bottom: 30px;
+
+      @media @small {
+        float: left;
+        width: @one-third;
+        margin: 0;
+      }
 
       &:last-of-type {
         margin-bottom: 0;

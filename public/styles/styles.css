@@ -87,6 +87,11 @@ Responsive
     visibility: visible;
   }
 }
+@media (min-width: 768px) and (max-width: 992px) {
+  .mtm {
+    margin-top: 31px;
+  }
+}
 /***************************
 ****************************
 General Styles
@@ -431,6 +436,13 @@ Sidebar Styles
 }
 .widget ul li {
   margin-bottom: 30px;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .widget ul li {
+    float: left;
+    width: 33.33333333%;
+    margin: 0;
+  }
 }
 .widget ul li:last-of-type {
   margin-bottom: 0;
