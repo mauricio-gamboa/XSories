@@ -689,6 +689,11 @@ Category Styles
   right: 0;
   top: 50px;
 }
+@media (max-width: 767px) {
+  .xs-categories li a > .arrow {
+    display: none;
+  }
+}
 .xs-categories li a > p {
   margin: 10px 0 0 0;
   font-size: 16px;
