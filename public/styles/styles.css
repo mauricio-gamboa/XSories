@@ -405,6 +405,10 @@ Main Styles
 .topic > * {
   padding: 16px 21px;
 }
+.topic .search-title {
+  padding: 0;
+  margin-bottom: 9px;
+}
 .topic .topic-title {
   text-transform: uppercase;
   padding-left: 78px;
@@ -702,4 +706,19 @@ Category Styles
 .xs-categories li a:hover > strong,
 .xs-categories li a:hover > .arrow {
   color: #ff4539;
+}
+/***************************
+****************************
+Category Styles
+****************************
+***************************/
+.search-title {
+  padding: 0;
+  background: url("../images/bg-search-title.png") no-repeat 0 100%;
+}
+.search-title h4 {
+  margin: 0;
+  text-transform: uppercase;
+  padding-bottom: 26px;
+  font-size: 16px;
 }
