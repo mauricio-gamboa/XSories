@@ -22,6 +22,12 @@ Variables
 @gray-13: #d7d7d7;
 @gray-14: #f7f7f7;
 @gray-15: #b7b7b7;
+@gray-16: #f6f6f6;
+@gray-17: #cfcece;
+@gray-18: #f2f3f4;
+@gray-19: #b5b5b5;
+@gray-20: #7d7d7d;
+@gray-21: #e2e2e2;
 
 @red-1: #ff4539;
 @red-2: #e03d32;
@@ -370,13 +376,22 @@ Header Styles
 ****************************
 ***************************/
 
-#header {
+.main-header {
   height: 477px;
   background: url("../images/bg-header.png") no-repeat 50% 0 / cover;
-}
-
-.main-header {
   padding-top: 95px;
+
+  &.small {
+    background: url("../images/bg-header-small.png") no-repeat 50% 0 / cover;
+    height: 132px;
+    padding-top: 40px;
+
+    h1 {
+      font-size: 28px;
+      padding-bottom: 30px;
+      margin: 0;
+    }
+  }
 
   h1, h2, h3, h4, h5, h6 {
     color: white;
@@ -437,6 +452,12 @@ Header Styles
   }
 }
 
+.search-box-settings-2 {
+  font-family: 'AvenirLTStd-Heavy';
+  color: @gray-4;
+  text-transform: uppercase;
+}
+
 .form-control {
   .border-radius(25px);
   boder-color: white;
@@ -448,27 +469,19 @@ Header Styles
   }
 
   &::-webkit-input-placeholder {
-    font-family: 'AvenirLTStd-Heavy';
-    color: @gray-4;
-    text-transform: uppercase;
+    .search-box-settings-2;
   }
 
   &:-moz-placeholder {
-    font-family: 'AvenirLTStd-Heavy';
-    color: @gray-4;
-    text-transform: uppercase;
+    .search-box-settings-2;
   }
 
   &::-moz-placeholder {
-    font-family: 'AvenirLTStd-Heavy';
-    color: @gray-4;
-    text-transform: uppercase;
+    .search-box-settings-2;
   }
 
   &:-ms-input-placeholder {
-    font-family: 'AvenirLTStd-Heavy';
-    color: @gray-4;
-    text-transform: uppercase;
+    .search-box-settings-2;
   }
 
   &.large-input {
@@ -566,7 +579,7 @@ Main Styles
   }
 
   .topic-content {
-    ul {
+    .questions {
       li {
         margin-bottom: 18px;
 
@@ -739,6 +752,145 @@ Footer Styles
     &.ig {
       &:hover {
         background-color: @ig-color;
+      }
+    }
+  }
+}
+
+/***************************
+****************************
+Category Styles
+****************************
+***************************/
+
+.search-box-settings {
+  font-family: 'Avenir-Roman';
+  font-size: 17px;
+  color: @gray-3;
+  text-transform: none;
+}
+
+#search-box {
+  height: 71px;
+}
+
+.search-box {
+  background-color: @gray-16;
+
+  .input-wrapper {
+    .form-control {
+      .search-box-settings;
+      border: none;
+      box-shadow: none;
+      background-color: @gray-16;
+      height: 71px;
+      padding: 0 36px;
+
+      &::-webkit-input-placeholder {
+        .search-box-settings;
+      }
+
+      &:-moz-placeholder {
+        .search-box-settings;
+      }
+
+      &::-moz-placeholder {
+        .search-box-settings;
+      }
+
+      &:-ms-input-placeholder {
+        .search-box-settings;
+      }
+    }
+
+    > span {
+      color: @gray-17;
+      font-size: 21px;
+      left: 0;
+      right: auto;
+      top: 25px;
+    }
+  }
+}
+
+.categories-wrapper {
+  .topic {
+    border: none;
+
+    .topic-title {
+      .border-bottom(1px, @gray-18);
+      padding-top: 0;
+      padding-left: 57px;
+      height: 61px;
+      background-position: 0 0;
+      background-color: white;
+
+      h4 {
+        font-size: 16px;
+      }
+    }
+
+    .topic-content {
+      padding: 0;
+    }
+  }
+}
+
+.xs-categories {
+  li {
+    .border-bottom(1px, @gray-18);
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    a {
+      padding: 23px 0 23px 34px;
+      display: block;
+      color: @font-color;
+      position: relative;
+      line-height: normal;
+
+      > .ico {
+        position: absolute;
+        left: 0;
+        top: 23px;
+        color: @gray-19;
+        font-size: 22px;
+      }
+
+      > strong {
+        font-family: 'AvenirLTStd-Heavy';
+        font-size: 17px;
+        font-weight: normal;
+        display: block;
+      }
+
+      > .meta {
+        font-size: 13px;
+        color: @gray-20;
+        display: block;
+      }
+
+      > .arrow {
+        color: @gray-21;
+        font-size: 20px;
+        position: absolute;
+        right: 0;
+        top: 50px;
+      }
+
+      > p {
+        margin: 10px 0 0 0;
+        font-size: 16px;
+      }
+
+      &:hover {
+        > .ico,
+        > strong,
+        > .arrow {
+          color: @red-1;
+        }
       }
     }
   }
