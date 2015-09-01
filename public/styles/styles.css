@@ -146,14 +146,20 @@ h6 {
 }
 .font-settings-main {
   line-height: 21px;
+  font-size: 16px;
+  color: #373e44;
+}
+.font-settings-smaller {
+  line-height: 21px;
   font-size: 15px;
+  color: #373e44;
 }
 body {
   background-color: white;
   font-family: 'Avenir-Roman';
-  color: #373e44;
   line-height: 21px;
-  font-size: 15px;
+  font-size: 16px;
+  color: #373e44;
 }
 /***************************
 ****************************
@@ -441,6 +447,8 @@ Main Styles
   margin-bottom: 18px;
 }
 .topic .topic-content .questions li a {
+  line-height: 21px;
+  font-size: 15px;
   color: #373e44;
 }
 .topic .topic-content .questions li a:hover {
@@ -661,32 +669,43 @@ Category Styles
 .xs-categories li:last-of-type {
   border-bottom: none;
 }
-.xs-categories li a {
+.xs-categories li > a {
   padding: 23px 0 23px 34px;
+}
+.xs-categories li > a > .ico {
+  top: 23px;
+}
+.xs-categories li > a:hover > .ico,
+.xs-categories li > a:hover > strong,
+.xs-categories li > a:hover > .arrow {
+  color: #ff4539;
+}
+.xs-categories li > * {
+  padding-left: 34px;
   display: block;
   color: #373e44;
   position: relative;
   line-height: normal;
 }
-.xs-categories li a > .ico {
+.xs-categories li > * > .ico {
   position: absolute;
   left: 0;
-  top: 23px;
+  top: 0;
   color: #b5b5b5;
   font-size: 22px;
 }
-.xs-categories li a > strong {
+.xs-categories li > * > strong {
   font-family: 'AvenirLTStd-Heavy';
   font-size: 17px;
   font-weight: normal;
   display: block;
 }
-.xs-categories li a > .meta {
+.xs-categories li > * > .meta {
   font-size: 13px;
   color: #7d7d7d;
   display: block;
 }
-.xs-categories li a > .arrow {
+.xs-categories li > * > .arrow {
   color: #e2e2e2;
   font-size: 20px;
   position: absolute;
@@ -694,18 +713,37 @@ Category Styles
   top: 50px;
 }
 @media (max-width: 767px) {
-  .xs-categories li a > .arrow {
+  .xs-categories li > * > .arrow {
     display: none;
   }
 }
-.xs-categories li a > p {
+.xs-categories li > * > p {
   margin: 10px 0 0 0;
   font-size: 16px;
 }
-.xs-categories li a:hover > .ico,
-.xs-categories li a:hover > strong,
-.xs-categories li a:hover > .arrow {
-  color: #ff4539;
+.xs-categories li > * .details-content {
+  margin-top: 28px;
+}
+.xs-categories li > * .details-content p {
+  font-size: 16px;
+  line-height: 21px;
+  margin-bottom: 28px;
+}
+.xs-categories li > * .social-links {
+  margin-top: 25px;
+}
+@media (max-width: 767px) {
+  .xs-categories li > * .social-links {
+    margin-bottom: 31px;
+  }
+}
+@media (max-width: 767px) {
+  .xs-categories.detail li > div {
+    padding-left: 0;
+  }
+  .xs-categories.detail li > div .ico {
+    display: none;
+  }
 }
 /***************************
 ****************************
@@ -721,4 +759,99 @@ Category Styles
   text-transform: uppercase;
   padding-bottom: 26px;
   font-size: 16px;
+}
+/***************************
+****************************
+Details Styles
+****************************
+***************************/
+.votes {
+  border-bottom: 1px solid #f2f3f4;
+  border-top: 1px solid #f2f3f4;
+  padding: 16px 0;
+}
+.votes > a {
+  float: left;
+  display: block;
+  text-align: center;
+  width: 50%;
+  color: #373e44;
+  font-size: 15px;
+  line-height: 36px;
+  border-right: 1px solid #f2f3f4;
+}
+.votes > a:last-of-type {
+  border-right: 0;
+}
+@media (max-width: 767px) {
+  .votes > a:last-of-type {
+    margin-top: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .votes > a {
+    float: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+  }
+}
+.votes > a:hover {
+  color: black;
+}
+.votes > a > span {
+  margin-right: 11px;
+}
+.votes > a.up > span {
+  background-color: #60cb3d;
+  color: white;
+  display: inline-block;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  text-align: center;
+  height: 36px;
+  width: 36px;
+  line-height: 36px;
+  font-size: 20px;
+}
+.votes > a.up:hover > span {
+  background-color: #55b237;
+}
+.votes > a.down > span {
+  background-color: #ff4237;
+  color: white;
+  display: inline-block;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  text-align: center;
+  height: 36px;
+  width: 36px;
+  line-height: 36px;
+  font-size: 20px;
+}
+.votes > a.down:hover > span {
+  background-color: #e93f35;
+}
+.social-links {
+  line-height: 35px;
+}
+.social-links > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+@media (max-width: 767px) {
+  .social-links > * {
+    display: block;
+  }
+}
+.social-links span {
+  font-family: 'AvenirLTStd-Heavy';
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+.social-links img {
+  max-width: 100%;
 }
