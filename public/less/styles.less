@@ -626,6 +626,12 @@ Sidebar Styles
 ***************************/
 
 .widget {
+  margin-bottom: 40px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
   h5 {
     color: @gray-1;
     background: url("../images/bg-widget-title.png") no-repeat 0 100%;
@@ -635,7 +641,46 @@ Sidebar Styles
     margin-bottom: 30px;
   }
 
+  h4 {
+    font-family: 'AvenirLTStd-Heavy';
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .location {
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @media @small {
+      margin: 0;
+      float: left;
+      width: @one-third;
+    }
+  }
+
+  .dl-horizontal {
+    font-size: 13px;
+    margin-bottom: 0;
+
+    dt {
+      text-align: left;
+      width: 70px;
+      margin-bottom: 5px;
+    }
+
+    dd {
+      margin-left: 90px;
+      margin-bottom: 5px;
+    }
+  }
+
   ul {
+    margin-bottom: 0;
+
     li {
       margin-bottom: 30px;
 
