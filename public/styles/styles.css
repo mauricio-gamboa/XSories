@@ -172,6 +172,7 @@ Navigation Styles
   position: absolute;
   top: 0;
   left: 15px;
+  z-index: 10;
 }
 .xs-navigation .top .xs-main-navigation {
   float: right;
@@ -732,7 +733,7 @@ Category Styles
 .search-box {
   background-color: #f6f6f6;
 }
-.search-box .input-wrapper .form-control {
+.search-box .input-wrapper > * input[type="text"] {
   font-size: 17px;
   color: #818181;
   text-transform: none;
@@ -741,28 +742,29 @@ Category Styles
   background-color: #f6f6f6;
   height: 71px;
   padding: 0 36px;
+  width: 100%;
 }
-.search-box .input-wrapper .form-control::-webkit-input-placeholder {
+.search-box .input-wrapper > * input[type="text"]::-webkit-input-placeholder {
   font-size: 17px;
   color: #818181;
   text-transform: none;
 }
-.search-box .input-wrapper .form-control:-moz-placeholder {
+.search-box .input-wrapper > * input[type="text"]:-moz-placeholder {
   font-size: 17px;
   color: #818181;
   text-transform: none;
 }
-.search-box .input-wrapper .form-control::-moz-placeholder {
+.search-box .input-wrapper > * input[type="text"]::-moz-placeholder {
   font-size: 17px;
   color: #818181;
   text-transform: none;
 }
-.search-box .input-wrapper .form-control:-ms-input-placeholder {
+.search-box .input-wrapper > * input[type="text"]:-ms-input-placeholder {
   font-size: 17px;
   color: #818181;
   text-transform: none;
 }
-.search-box .input-wrapper > span {
+.search-box .input-wrapper > * > span {
   color: #cfcece;
   font-size: 21px;
   left: 0;

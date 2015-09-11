@@ -275,6 +275,7 @@ Navigation Styles
       position: absolute;
       top: 0;
       left: 15px;
+      z-index: 10;
     }
 
     .xs-main-navigation {
@@ -820,37 +821,40 @@ Category Styles
   background-color: @gray-16;
 
   .input-wrapper {
-    .form-control {
-      .search-box-settings;
-      border: none;
-      box-shadow: none;
-      background-color: @gray-16;
-      height: 71px;
-      padding: 0 36px;
-
-      &::-webkit-input-placeholder {
+    > * {
+      input[type="text"] {
         .search-box-settings;
+        border: none;
+        box-shadow: none;
+        background-color: @gray-16;
+        height: 71px;
+        padding: 0 36px;
+        width: 100%;
+
+        &::-webkit-input-placeholder {
+          .search-box-settings;
+        }
+
+        &:-moz-placeholder {
+          .search-box-settings;
+        }
+
+        &::-moz-placeholder {
+          .search-box-settings;
+        }
+
+        &:-ms-input-placeholder {
+          .search-box-settings;
+        }
       }
 
-      &:-moz-placeholder {
-        .search-box-settings;
+      > span {
+        color: @gray-17;
+        font-size: 21px;
+        left: 0;
+        right: auto;
+        top: 25px;
       }
-
-      &::-moz-placeholder {
-        .search-box-settings;
-      }
-
-      &:-ms-input-placeholder {
-        .search-box-settings;
-      }
-    }
-
-    > span {
-      color: @gray-17;
-      font-size: 21px;
-      left: 0;
-      right: auto;
-      top: 25px;
     }
   }
 }
