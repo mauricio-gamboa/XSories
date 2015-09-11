@@ -48,54 +48,6 @@ Variables
 
 /***************************
 ****************************
-Fonts
-****************************
-***************************/
-
-@font-face {
-  font-family: 'Avenir-Roman';
-  src: url('../fonts/Avenir-Roman_gdi.eot');
-  src: url('../fonts/Avenir-Roman_gdi.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Avenir-Roman_gdi.woff') format('woff'),
-  url('../fonts/Avenir-Roman_gdi.ttf') format('truetype'),
-  url('../fonts/Avenir-Roman_gdi.otf') format('opentype'),
-  url('../fonts/Avenir-Roman_gdi.svg#Avenir-Roman') format('svg');
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  unicode-range: U+0020-2212;
-}
-
-@font-face {
-  font-family: 'AvenirLTStd-Heavy';
-  src: url('../fonts/AvenirLTStd-Heavy_gdi.eot');
-  src: url('../fonts/AvenirLTStd-Heavy_gdi.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/AvenirLTStd-Heavy_gdi.woff') format('woff'),
-  url('../fonts/AvenirLTStd-Heavy_gdi.ttf') format('truetype'),
-  url('../fonts/AvenirLTStd-Heavy_gdi.otf') format('opentype'),
-  url('../fonts/AvenirLTStd-Heavy_gdi.svg#AvenirLTStd-Heavy') format('svg');
-  font-weight: 700;
-  font-style: normal;
-  font-stretch: normal;
-  unicode-range: U+0020-25CA;
-}
-
-@font-face {
-  font-family: 'AvenirLTStd-Black';
-  src: url('../fonts/AvenirLTStd-Black_gdi.eot');
-  src: url('../fonts/AvenirLTStd-Black_gdi.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/AvenirLTStd-Black_gdi.woff') format('woff'),
-  url('../fonts/AvenirLTStd-Black_gdi.ttf') format('truetype'),
-  url('../fonts/AvenirLTStd-Black_gdi.otf') format('opentype'),
-  url('../fonts/AvenirLTStd-Black_gdi.svg#AvenirLTStd-Black') format('svg');
-  font-weight: 750;
-  font-style: normal;
-  font-stretch: normal;
-  unicode-range: U+0020-25CA;
-}
-
-/***************************
-****************************
 Responsive
 ****************************
 ***************************/
@@ -242,7 +194,7 @@ button {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'AvenirLTStd-Black';
+  font-weight: 700;
   margin-top: 0;
 }
 
@@ -272,7 +224,6 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   background-color: white;
-  font-family: 'Avenir-Roman';
   .font-settings-main;
 }
 
@@ -286,7 +237,7 @@ Buttons & Links
   text-transform: uppercase;
   color: white;
   font-size: 14px;
-  font-family: 'AvenirLTStd-Heavy';
+  font-weight: 500;
   .border-radius(25px);
   height: 39px;
   display: inline-block;
@@ -346,7 +297,7 @@ Navigation Styles
   height: 40px;
 
   li {
-    font-family: 'AvenirLTStd-Heavy';
+    font-weight: 500;
     line-height: 40px;
     height: 40px;
     padding: 0 17px;
@@ -427,22 +378,28 @@ Header Styles
       width: 100%;
     }
 
-    .large-input {
-      padding-right: 66px;
-    }
+    > * {
+      .large-input,
+      #q {
+        .form-control-settings;
+        .form-control-settings-custom;
+        .q-input;
+        padding-right: 66px;
+      }
 
-    > span {
-      right: 38px;
-      top: 17px;
+      > span {
+        right: 38px;
+        top: 17px;
 
-      .fa {
-        font-size: 30px;
+        .fa {
+          font-size: 30px;
+        }
       }
     }
   }
 
   h5 {
-    font-family: 'AvenirLTStd-Heavy';
+    font-weight: 500;
     font-size: 15px;
     margin-top: 25px;
   }
@@ -455,21 +412,34 @@ Header Styles
 .input-wrapper {
   position: relative;
 
-  > span {
-    color: @red-1;
-    position: absolute;
-    top: 0;
-    right: 0;
+  > * {
+    > span {
+      color: @red-1;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 }
 
 .search-box-settings-2 {
-  font-family: 'AvenirLTStd-Heavy';
+  font-weight: 500;
   color: @gray-4;
   text-transform: uppercase;
 }
 
 .form-control {
+  .form-control-settings-custom;
+}
+
+.q-input {
+  .border-radius(50px);
+  height: 67px;
+  line-height: 67px;
+  padding: 0 38px;
+}
+
+.form-control-settings-custom {
   .border-radius(25px);
   boder-color: white;
 
@@ -496,11 +466,24 @@ Header Styles
   }
 
   &.large-input {
-    .border-radius(50px);
-    height: 67px;
-    line-height: 67px;
-    padding: 0 38px;
+    .q-input;
   }
+}
+
+.form-control-settings {
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  color: #555;
+  display: block;
+  font-size: 14px;
+  height: 34px;
+  line-height: 1.42857;
+  padding: 6px 12px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  width: 100%;
 }
 
 /***************************
@@ -510,7 +493,7 @@ Breadcrumbs Styles
 ***************************/
 
 .breadcrumbs {
-  font-family: 'AvenirLTStd-Black';
+  font-weight: 700;
   text-transform: uppercase;
   font-size: 11px;
   color: @gray-5;
@@ -563,22 +546,7 @@ Main Styles
     text-transform: uppercase;
     padding-left: 78px;
     height: 77px;
-
-    &.icon-1 {
-      background: @gray-9 url("../images/bg-icon-1.png") no-repeat 21px 16px;
-    }
-
-    &.icon-2 {
-      background: @gray-9 url("../images/bg-icon-2.png") no-repeat 21px 16px;
-    }
-
-    &.icon-3 {
-      background: @gray-9 url("../images/bg-icon-3.png") no-repeat 21px 16px;
-    }
-
-    &.icon-4 {
-      background: @gray-9 url("../images/bg-icon-4.png") no-repeat 21px 16px;
-    }
+    background-color: @gray-9;
 
     h4 {
       font-size: 15px;
@@ -588,7 +556,7 @@ Main Styles
 
     span {
       color: @gray-10;
-      font-family: 'AvenirLTStd-Black';
+      font-weight: 700;
       display: block;
       font-size: 13px;
     }
@@ -611,11 +579,20 @@ Main Styles
   }
 
   .topic-footer {
-    font-family: 'AvenirLTStd-Black';
+    font-weight: 700;
     .border-top(1px, @gray-8);
     text-align: right;
     text-transform: uppercase;
     font-size: 13px;
+  }
+
+  &.topic837250 {
+    .topic-title {
+      background: @gray-9 url("../images/bg-icon-2.png") no-repeat 21px 16px;
+      //background: @gray-9 url("../images/bg-icon-1.png") no-repeat 21px 16px;
+      //background: @gray-9 url("../images/bg-icon-3.png") no-repeat 21px 16px;
+      //background: @gray-9 url("../images/bg-icon-4.png") no-repeat 21px 16px;
+    }
   }
 }
 
@@ -642,7 +619,7 @@ Sidebar Styles
   }
 
   h4 {
-    font-family: 'AvenirLTStd-Heavy';
+    font-weight: 500;
     font-size: 15px;
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -662,11 +639,16 @@ Sidebar Styles
     }
   }
 
-  .dl-horizontal {
+  dl {
     font-size: 13px;
     margin-bottom: 0;
 
     dt {
+      clear: left;
+      float: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       text-align: left;
       width: 70px;
       margin-bottom: 5px;
@@ -695,7 +677,7 @@ Sidebar Styles
       }
 
       a {
-        font-family: 'AvenirLTStd-Heavy';
+        font-weight: 500;
         text-transform: uppercase;
         font-size: 13px;
         color: @gray-1;
@@ -757,7 +739,6 @@ Footer Styles
     padding: 20px 0;
     color: @gray-15;
     font-size: 11px;
-    font-family: 'Avenir-Roman';
 
     .powered {
       float: left;
@@ -825,7 +806,7 @@ Category Styles
 ***************************/
 
 .search-box-settings {
-  font-family: 'Avenir-Roman';
+
   font-size: 17px;
   color: @gray-3;
   text-transform: none;
@@ -937,9 +918,8 @@ Category Styles
       }
 
       > strong {
-        font-family: 'AvenirLTStd-Heavy';
+        font-weight: 500;
         font-size: 17px;
-        font-weight: normal;
         display: block;
       }
 
@@ -1102,7 +1082,7 @@ Details Styles
   }
 
   span {
-    font-family: 'AvenirLTStd-Heavy';
+    font-weight: 500;
     font-size: 14px;
     text-transform: uppercase;
     margin-right: 10px;
