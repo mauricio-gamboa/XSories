@@ -1,0 +1,102 @@
+<div id="xs-navigation" class="xs-navigation">
+  <div class="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h1 class="logo"><a href="http://xsories.com/">XSories</a></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <a href="http://xsories.com/" class="xs-btn btn-main hide-xs">back to shopping</a>
+          <a href="http://xsories.com/" class="xs-btn btn-main show-xs">Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id='company-support-portal'>
+  <div class='wrapper'>
+    {{desk:body}}
+  </div>
+</div>
+
+<!-- Facebook Like Button -->
+<div id="fb-root"></div>
+
+<div id="footer" class="footer">
+  <div class="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h1 class="logo reversed"><a href="http://xsories.com/">XSories</a></h1>
+
+          <div class="social">
+            <a href="https://www.facebook.com/XSories" target="_blank" class="social-btn fb"><span><span class="fa fa-facebook"></span></span></a>
+            <a href="https://twitter.com/XSories" target="_blank" class="social-btn tw"><span><span class="fa fa-twitter"></span></span></a>
+            <a href="https://www.youtube.com/user/XSories" target="_blank" class="social-btn yt"><span><span class="fa fa-youtube-play"></span></span></a>
+            <a href="https://www.pinterest.com/xsories/" target="_blank" class="social-btn pt"><span><span class="fa fa-pinterest-p"></span></span></a>
+            <a href="https://instagram.com/xsories/" target="_blank" class="social-btn ig"><span><span class="fa fa-instagram"></span></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="powered">Customer service software powered by <a href="http://www.desk.com'">Desk.com</a></div>
+          <ul class="list-unstyled clearfix">
+            <li><a href="http://xsories.com/partner-application">Become a Partner</a></li>
+            <li><a href="http://xsories.com/privacy-policy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- External Variables for Portal Header -->
+<div id="desk-external-variables-header" class="desk-external-variables">
+  <div id="read_only">{{read_only}}</div>
+  <div id="site-default_mailbox">{{site.default_mailbox}}</div>
+  <div id="desk_javascript_host">{{desk_javascript_host}}</div>
+  <div id="twitter_enabled">{{desk.apps.twitter.enabled}}</div>
+  <div id="twitter_username">{{desk.apps.twitter.username}}</div>
+  <div id="system-snippets-loading">{{system.snippets.loading}}</div>
+  <div id="system-snippets-seconds_ago">{{system.snippets.seconds_ago}}</div>
+  <div id="system-snippets-a_minute_ago">{{system.snippets.a_minute_ago}}</div>
+  <div id="system-snippets-minutes_ago">{{system.snippets.minutes_ago}}</div>
+  <div id="system-snippets-an_hour_ago">{{system.snippets.an_hour_ago}}</div>
+  <div id="system-snippets-hours_ago">{{system.snippets.hours_ago}}</div>
+  <div id="system-snippets-a_day_ago">{{system.snippets.a_day_ago}}</div>
+  <div id="system-snippets-days_ago">{{system.snippets.days_ago}}</div>
+  <div id="system-snippets-about">{{system.snippets.about}}</div>
+  <div id="enable_gs">{{desk.apps.get_satisfaction.enabled}}</div>
+  <div id="system-snippets-invalid_characters_found">{{system.snippets.invalid_characters_found}}</div>
+  <div id="site-search_autocomplete_articles_url">{{site.search_autocomplete_articles_url}}</div>
+  <div id="search-term">{{search_term}}</div>
+  {% if desk.apps.get_satisfaction.enabled %}
+  <div id="system-snippets-get_satisfaction_error">{{system.snippets.get_satisfaction_error}}</div>
+  <div id="system-snippets-view_all">{{system.snippets.view_all}}</div>
+  <div id="system-snippets-no_related_discussions">{{system.snippets.no_related_discussions}}</div>
+  <div id="system-snippets-related_discussions">{{system.snippets.related_discussions}}</div>
+  <div id="zero0">{{0}}</div>
+  <div id="system-snippets-discussions">{{system.snippets.discussions}}</div>
+  <div id="system-snippets-replies">{{system.snippets.replies}}</div>
+  <div id="system-snippets-questions">{{system.snippets.questions}}</div>
+  <div id="system-snippets-ideas">{{system.snippets.ideas}}</div>
+  <div id="system-snippets-problems">{{system.snippets.problems}}</div>
+  <div id="system-snippets-praise">{{system.snippets.praise}}</div>
+  {% endif %}
+</div>
+
+<script type="text/javascript" src="{{desk_javascript_host}}portal/desk.portal.shared.js"></script>
+<script type="text/javascript" src="{{desk_javascript_host}}portal/desk.portal.header.js"></script>
+<script type="text/javascript" src="{{desk_javascript_host}}portal/desk.portal.body.layout_footer.js"></script>

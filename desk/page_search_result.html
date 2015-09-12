@@ -1,0 +1,148 @@
+<div id="header" class="main-header small">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1 class="bg-xxx">Support Center</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="breadcrubs" class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <a href='http://support.xsories.com/'>Home</a> <span>/</span> {{system.snippets.search}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="search-box" class="search-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="input-wrapper">
+          {{ search_form_begin }}
+            <input id='q' type='text' name='q' maxlength='100' value='' />
+            {{template_form_params}}
+            <span><span class="fa fa-search"></span></span>
+          {{ search_form_end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="desk-external-variables-page_search_result" class="desk-external-variables">
+  <div id="search_term">{{ search_term }}</div>
+</div>
+
+<div style="display:none" id="search_term">{{ search_term }}</div>
+
+<div id="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="categories-wrapper">
+              <div class="topic">
+                <div class="search-title">
+                  <h4>{{ number_search_results }} {{system.snippets.results_found_for}} "{{ search_term }}"</h4>
+                </div>
+                <div class="topic-content">
+                  <ul class="list-unstyled xs-categories">
+                    {% for result in search_results %}
+                    <li>
+                      <a href='{{ result.public_url }}'>
+                        <span class="ico"><span class="fa fa-file-text-o"></span></span>
+                        <strong>{{ result.subject_plain | clip:80 }}</strong>
+                        <span class="meta">
+                          <span>{{ result.updated_at | in_time_zone: site.timezone | date: '%b %d, %Y' }}</span> &bull; <span>{{ result.updated_at | in_time_zone: site.timezone | date: '%I:%M%p %Z' }}</span>
+                        </span>
+
+                        <p>{{ result.body_plain | clip:100 }}</p>
+                        <span class="arrow"><span class="fa fa-chevron-right"></span></span>
+                      </a>
+                    </li>
+                    {% endfor %}
+                    {% if number_search_results == 0 %}
+                    <li>
+                      <div class="alert alert-warning">{{system.snippets.sorry_try_another_search}}</div>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 mtm">
+        <div class="sidebar">
+          <div class="widget clearfix">
+            <h5>contact us</h5>
+            <ul class="list-unstyled">
+              <li><a href="mailto:support@xsories.com"><span><span class="fa fa-fw fa-envelope"></span></span> send us a message</a></li>
+              <li><a><span><span class="fa fa-fw fa-phone"></span></span> call us +1 442 244 0516</a>
+              </li>
+              <li><a href="http://xsories.com/"><span><span class="fa fa-fw fa-shopping-cart"></span></span> go to shopping</a></li>
+            </ul>
+          </div>
+          <div class="widget clearfix">
+            <h5>Customer Service</h5>
+
+            <div class="location">
+              <h4>United States</h4>
+              <dl>
+                <dt>Phone</dt>
+                <dd>+001 442-2440516</dd>
+                <dt>Address</dt>
+                <dd>
+                  Mailing address: <br/>
+                  XS Commerce LLC <br/>
+                  2888 Loker Ave East <br/>
+                  Suite 305 <br/>
+                  Carlsbad, CA, 92010 <br/>
+                  USA
+                </dd>
+                <dt>Email</dt>
+                <dd>support@xsories.com</dd>
+              </dl>
+            </div>
+
+            <div class="location">
+              <h4>Europe</h4>
+              <dl>
+                <dt>Phone</dt>
+                <dd>+33 559 43 86 00</dd>
+                <dt>Address</dt>
+                <dd>
+                  Mailing Address: <br/>
+                  9 Rue de la Negresse <br/>
+                  64200 Biarritz
+                </dd>
+              </dl>
+            </div>
+
+            <div class="location">
+              <h4>Hong Kong</h4>
+              <dl>
+                <dt>Address</dt>
+                <dd>
+                  XSORIES HONG KONG LIMITED <br/>
+                  13/F Fung Woo Center 279-281 <br/>
+                  Des Voex Road Central <br/>
+                  Sheung Wan HONG KONG
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="{{desk_javascript_host}}portal/desk.portal.body.page_search_result.js"></script>
