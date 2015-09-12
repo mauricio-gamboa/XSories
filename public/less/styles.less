@@ -1009,12 +1009,13 @@ Details Styles
 ****************************
 ***************************/
 
-.votes {
+#rate_article {
   .border-bottom(1px, @gray-18);
   .border-top(1px, @gray-18);
   padding: 16px 0;
+  overflow: hidden;
 
-  > a {
+  > div {
     float: left;
     display: block;
     text-align: center;
@@ -1039,60 +1040,69 @@ Details Styles
       text-align: left;
     }
 
-    &:hover {
-      color: @font-color-hover;
+    > .rate_link {
+      .icon(36px, @green-1);
+      color: @green-1;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        font-family: FontAwesome;
+        top: 0;
+        left: 0;
+        content: "\f164";
+        color: white;
+        width: 100%;
+      }
+
+      &:hover {
+        background-color: @green-2;
+        color: @green-2;
+      }
+    }
+
+    &.rate-link-down {
+      > .rate_link {
+        .icon(36px, @red-4);
+        color: @red-4;
+
+        &:before {
+          content: "\f165";
+        }
+
+        &:hover {
+          background-color: @red-5;
+          color: @red-5;
+        }
+      }
     }
 
     > span {
       margin-right: 11px;
     }
-
-    &.up {
-      > span {
-        .icon(36px, @green-1);
-      }
-
-      &:hover {
-        > span {
-          background-color: @green-2;
-        }
-      }
-    }
-
-    &.down {
-      > span {
-        .icon(36px, @red-4);
-      }
-
-      &:hover {
-        > span {
-          background-color: @red-5;
-        }
-      }
-    }
   }
 }
 
 .social-links {
-  line-height: 35px;
-
-  > * {
-    display: inline-block;
-    vertical-align: middle;
-
-    @media @xs {
-      display: block;
-    }
-  }
-
-  span {
+  > span {
     font-weight: 500;
     font-size: 14px;
     text-transform: uppercase;
-    margin-right: 10px;
+    display: block;
+    margin-bottom: 10px;
   }
+}
 
-  img {
-    max-width: 100%;
+#social-share {
+  overflow: hidden;
+  width: 100%;
+
+  .share-btn {
+    float: left;
+    margin-right: 20px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
   }
 }

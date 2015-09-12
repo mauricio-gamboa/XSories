@@ -57,9 +57,11 @@
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="input-wrapper">
-          <input type="text" class="form-control large-input"
-                 placeholder="Have a Question? Ask or enter a search term here"/>
-          <span><i class="fa fa-search"></i></span>
+          <form action="">
+            <input type="text" class="form-control large-input"
+                   placeholder="Have a Question? Ask or enter a search term here"/>
+            <span><i class="fa fa-search"></i></span>
+          </form>
         </div>
       </div>
     </div>
@@ -109,11 +111,26 @@
                         </div>
 
                         <div class="votes clearfix">
-                          <a href="" class="up"><span><i class="fa fa-thumbs-up"></i></span> I found this article
-                            helpful</a>
-
-                          <a href="" class="down"><span><i class="fa fa-thumbs-down"></i></span> I did not find this
-                            article helpful</a>
+                          <div style="" id="rate_article_container">
+                            <div id="rate_article">
+                              <div>
+                                <a rel="nofollow" data-remote="true" data-method="post" class="rate_link"
+                                   href="http://support.xsories.com/customer/en/portal/articles/2100353/rate?rating=1">
+                                  Yes </a>
+			<span>
+        I found this article helpful
+			</span>
+                              </div>
+                              <div class="rate-link-down">
+                                <a rel="nofollow" data-remote="true" data-method="post" class="rate_link"
+                                   href="http://support.xsories.com/customer/en/portal/articles/2100353/rate?rating=0">
+                                  No</a>
+			<span>
+        I did not find this article helpful
+			</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
 
                         <div class="social-links">

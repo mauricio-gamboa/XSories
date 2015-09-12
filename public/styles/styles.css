@@ -889,12 +889,13 @@ Category Styles
 Details Styles
 ****************************
 ***************************/
-.votes {
+#rate_article {
   border-bottom: 1px solid #f2f3f4;
   border-top: 1px solid #f2f3f4;
   padding: 16px 0;
+  overflow: hidden;
 }
-.votes > a {
+#rate_article > div {
   float: left;
   display: block;
   text-align: center;
@@ -904,29 +905,23 @@ Details Styles
   line-height: 36px;
   border-right: 1px solid #f2f3f4;
 }
-.votes > a:last-of-type {
+#rate_article > div:last-of-type {
   border-right: 0;
 }
 @media (max-width: 767px) {
-  .votes > a:last-of-type {
+  #rate_article > div:last-of-type {
     margin-top: 25px;
   }
 }
 @media (max-width: 767px) {
-  .votes > a {
+  #rate_article > div {
     float: none;
     border: none;
     width: 100%;
     text-align: left;
   }
 }
-.votes > a:hover {
-  color: black;
-}
-.votes > a > span {
-  margin-right: 11px;
-}
-.votes > a.up > span {
+#rate_article > div > .rate_link {
   background-color: #60cb3d;
   color: white;
   display: inline-block;
@@ -938,11 +933,23 @@ Details Styles
   width: 36px;
   line-height: 36px;
   font-size: 20px;
+  color: #60cb3d;
+  position: relative;
 }
-.votes > a.up:hover > span {
+#rate_article > div > .rate_link:before {
+  position: absolute;
+  font-family: FontAwesome;
+  top: 0;
+  left: 0;
+  content: "\f164";
+  color: white;
+  width: 100%;
+}
+#rate_article > div > .rate_link:hover {
   background-color: #55b237;
+  color: #55b237;
 }
-.votes > a.down > span {
+#rate_article > div.rate-link-down > .rate_link {
   background-color: #ff4237;
   color: white;
   display: inline-block;
@@ -954,28 +961,33 @@ Details Styles
   width: 36px;
   line-height: 36px;
   font-size: 20px;
+  color: #ff4237;
 }
-.votes > a.down:hover > span {
+#rate_article > div.rate-link-down > .rate_link:before {
+  content: "\f165";
+}
+#rate_article > div.rate-link-down > .rate_link:hover {
   background-color: #e93f35;
+  color: #e93f35;
 }
-.social-links {
-  line-height: 35px;
+#rate_article > div > span {
+  margin-right: 11px;
 }
-.social-links > * {
-  display: inline-block;
-  vertical-align: middle;
-}
-@media (max-width: 767px) {
-  .social-links > * {
-    display: block;
-  }
-}
-.social-links span {
+.social-links > span {
   font-weight: 500;
   font-size: 14px;
   text-transform: uppercase;
-  margin-right: 10px;
+  display: block;
+  margin-bottom: 10px;
 }
-.social-links img {
-  max-width: 100%;
+#social-share {
+  overflow: hidden;
+  width: 100%;
+}
+#social-share .share-btn {
+  float: left;
+  margin-right: 20px;
+}
+#social-share .share-btn:last-of-type {
+  margin-right: 0;
 }
